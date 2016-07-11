@@ -59,7 +59,7 @@
             <meta name="text:Link 4 URL" content=""/>
             <meta name="text:Link 5 Name" content=""/>
             <meta name="text:Link 5 URL" content=""/>
-            <meta name="text:Sub Menu Name" content="Sub Menu"/>
+            <meta name="text:Sub Menu Name" content=""/>
             <meta name="text:Sub Menu Link 1 Name" content=""/>
             <meta name="text:Sub Menu Link 1 URL" content=""/>
             <meta name="text:Sub Menu Link 2 Name" content=""/>
@@ -986,47 +986,49 @@
                 {block:Description}
                     <p id="description">{Description}</p>
                 {/block:Description}
-                <nav>
-                    <ul class="cl">
-                        {block:HasPages}
-                            {block:Pages}
-                                <li> <a href="{URL}">{Label}</a></li>
-                            {/block:Pages}
-                        {/block:HasPages}
-                        {block:IfLink1URL}<li><a target="_blank" href="{text:Link 1 URL}">{text:Link 1 Name}</a></li>{/block:IfLink1URL}
-                        {block:IfLink2URL}<li><a target="_blank" href="{text:Link 2 URL}">{text:Link 2 Name}</a></li>{/block:IfLink2URL}
-                        {block:IfLink3URL}<li><a target="_blank" href="{text:Link 3 URL}">{text:Link 3 Name}</a></li>{/block:IfLink3URL}
-                        {block:IfLink4URL}<li><a target="_blank" href="{text:Link 4 URL}">{text:Link 4 Name}</a></li>{/block:IfLink4URL}
-                        {block:IfLink5URL}<li><a target="_blank" href="{text:Link 5 URL}">{text:Link 5 Name}</a></li>{/block:IfLink5URL} 
-                        {block:IfSubMenuLink1URL}
-                            <li class="has-children">
-                                <a>{text:Sub Menu Name}</a>
-                                <ul class="sub-menu">
-                                    {block:IfSubMenuLink1URL}<li><a href="{text:Sub Menu Link 1 URL}">{text:Sub Menu Link 1 Name}</a></li>{/block:IfSubMenuLink1URL}
-                                    {block:IfSubMenuLink2URL}<li><a href="{text:Sub Menu Link 2 URL}">{text:Sub Menu Link 2 Name}</a></li>{/block:IfSubMenuLink2URL}
-                                    {block:IfSubMenuLink3URL}<li><a href="{text:Sub Menu Link 3 URL}">{text:Sub Menu Link 3 Name}</a></li>{/block:IfSubMenuLink3URL}
-                                    {block:IfSubMenuLink4URL}<li><a href="{text:Sub Menu Link 4 URL}">{text:Sub Menu Link 4 Name}</a></li>{/block:IfSubMenuLink4URL}
-                                    {block:IfSubMenuLink5URL}<li><a href="{text:Sub Menu Link 5 URL}">{text:Sub Menu Link 5 Name}</a></li>{/block:IfSubMenuLink5URL} 
-                                </ul>
-                            </li>
-                        {/block:IfSubMenuLink1URL}
-                        {block:ifRandomLink}
-                            <li><a href="/random">Random</a></li>
-                        {/block:ifRandomLink}
-                        {block:ifRSSLink}
-                            <li><a href="{RSS}">RSS</a></li>
-                        {/block:ifRSSLink}
-                        {block:IfArchiveLink}
-                            <li><a href="/archive">Archive</a></li>
-                        {/block:IfArchiveLink}
-                        {block:SubmissionsEnabled}
-                            <li> <a href="/submit">{SubmitLabel}</a></li>
-                        {/block:SubmissionsEnabled}
-                        {block:AskEnabled}
-                            <li> <a href="/ask" class="fuse-ask-toggle ob-close-sidebar">{AskLabel}</a></li>
-                        {/block:AskEnabled}
-                    </ul>
-                </nav>
+                {block:IfNavigation}
+                    <nav>
+                        <ul class="cl">
+                            {block:ifRandomLink}
+                                <li><a href="/random">Random</a></li>
+                            {/block:ifRandomLink}
+                            {block:ifRSSLink}
+                                <li><a href="{RSS}">RSS</a></li>
+                            {/block:ifRSSLink}
+                            {block:IfArchiveLink}
+                                <li><a href="/archive">Archive</a></li>
+                            {/block:IfArchiveLink}
+                            {block:SubmissionsEnabled}
+                                <li> <a href="/submit">{SubmitLabel}</a></li>
+                            {/block:SubmissionsEnabled}
+                            {block:AskEnabled}
+                                <li> <a href="/ask" class="fuse-ask-toggle ob-close-sidebar">{AskLabel}</a></li>
+                            {/block:AskEnabled}
+                            {block:HasPages}
+                                {block:Pages}
+                                    <li> <a href="{URL}">{Label}</a></li>
+                                {/block:Pages}
+                            {/block:HasPages}
+                            {block:IfLink1URL}<li><a target="_blank" href="{text:Link 1 URL}">{text:Link 1 Name}</a></li>{/block:IfLink1URL}
+                            {block:IfLink2URL}<li><a target="_blank" href="{text:Link 2 URL}">{text:Link 2 Name}</a></li>{/block:IfLink2URL}
+                            {block:IfLink3URL}<li><a target="_blank" href="{text:Link 3 URL}">{text:Link 3 Name}</a></li>{/block:IfLink3URL}
+                            {block:IfLink4URL}<li><a target="_blank" href="{text:Link 4 URL}">{text:Link 4 Name}</a></li>{/block:IfLink4URL}
+                            {block:IfLink5URL}<li><a target="_blank" href="{text:Link 5 URL}">{text:Link 5 Name}</a></li>{/block:IfLink5URL} 
+                            {block:IfSubMenuLink1URL}
+                                <li class="has-children">
+                                    <a>{text:Sub Menu Name}</a>
+                                    <ul class="sub-menu">
+                                        {block:IfSubMenuLink1URL}<li><a href="{text:Sub Menu Link 1 URL}">{text:Sub Menu Link 1 Name}</a></li>{/block:IfSubMenuLink1URL}
+                                        {block:IfSubMenuLink2URL}<li><a href="{text:Sub Menu Link 2 URL}">{text:Sub Menu Link 2 Name}</a></li>{/block:IfSubMenuLink2URL}
+                                        {block:IfSubMenuLink3URL}<li><a href="{text:Sub Menu Link 3 URL}">{text:Sub Menu Link 3 Name}</a></li>{/block:IfSubMenuLink3URL}
+                                        {block:IfSubMenuLink4URL}<li><a href="{text:Sub Menu Link 4 URL}">{text:Sub Menu Link 4 Name}</a></li>{/block:IfSubMenuLink4URL}
+                                        {block:IfSubMenuLink5URL}<li><a href="{text:Sub Menu Link 5 URL}">{text:Sub Menu Link 5 Name}</a></li>{/block:IfSubMenuLink5URL} 
+                                    </ul>
+                                </li>
+                            {/block:IfSubMenuLink1URL}
+                        </ul>
+                    </nav>
+                {/block:IfNavigation}
                 {block:IfSoundcloudURL}
                     <div id="fuse-sc-player" class="widget cl" style="opacity:1;">
                         <div class="sc-meta cl">
