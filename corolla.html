@@ -75,7 +75,6 @@
             <meta name="color:Link" content="#3c3c3c"/>
             <meta name="color:Link Hover" content="#000000"/>
             <!-- Ants -->
-            <meta name="text:Rectangle Ad Code" content=""/>
             <meta name="color:Photo Post Social Icons" content="#fff"/>
             <meta name="color:Other Post Social Icons" content="#111"/>
             <meta name="color:Post Meta Link" content="#111"/>
@@ -124,14 +123,13 @@
             TUMBLR_TITLE = {JSPlaintextTitle};
             TUMBLR_DESC = {JSPlaintextDescription};
             TUMBLR_URL = {JSPlaintextBlogURL};
-            rectangleAdCode = {block:IfRectangleAdCode}'{text:Rectangle Ad Code}'{/block:IfRectangleAdCode}{block:IfNotRectangleAdCode}false{/block:IfNotRectangleAdCode};
             OTHER_POST_META = {block:IfOtherPostMeta}true{/block:IfOtherPostMeta}{block:IfNotOtherPostMeta}false{/block:IfNotOtherPostMeta}
         </script>
 
         <!-- CSS -->
         <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://static.tumblr.com/b5aw2yz/VW3nj01lh/twemoji-awesome.css">
-        <link rel="stylesheet" href="http://static.tumblr.com/evx2wil/iWIoa4z69/ants-core.css">
+        <link rel="stylesheet" href="http://static.tumblr.com/evx2wil/7deoacyty/ants-core.css">
         <style type="text/css">
             /* Scrollbars */
             ::-webkit-scrollbar {
@@ -885,19 +883,6 @@
             {CustomCSS}
         </style>
     </head>
-    {block:IfRectangleAdCode}
-        <div id="lAdCode">
-            <div class="dupe-leaderboard">
-                    <script type="text/javascript">
-                        {text:Rectangle Ad Code}
-                    </script>
-                    <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-                
-                <script type="text/javascript">{text:Rectangle Ad Code}</script>
-                <script type="text/javascript" src="//pagead2.googlesyndication.com/pagead/show_ads.js"></script>
-            </div>
-        </div>
-    {/block:IfRectangleAdCode}
     <body class="{block:IndexPage}index{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}">
         <a class='customize-demo demo-note' href='http://corollanine.tumblr.com/' target='_blank'><small>Our themes are jam-packed with features</small><b>Preview the demo</b></a>
         <div id="fuse-preloader">
@@ -968,16 +953,6 @@
         <header class="fuse-sidebar">
             <div class="toggle"></div>
             <div class="head">
-                {block:ShowTitle}
-                    <div class="head-logo">
-                        {block:IfNotLogo}
-                            <h1 class="blog-title">{Title}</h1>
-                        {/block:IfNotLogo}
-                        {block:IfLogo}
-                            <img src="{image:Logo}" alt="logo" />
-                        {/block:IfLogo}
-                    </div>
-                {/block:ShowTitle}
                 {block:ShowAvatar} 
                     <div class="avatar widget">
                         <img src="{PortraitURL-128}"/>
@@ -1313,7 +1288,7 @@
         </div>
         <script src="https://code.jquery.com/jquery-2.2.2.js" integrity="sha256-4/zUCqiq0kqxhZIyp4G0Gk+AOtCJsY1TA00k5ClsZYE=" crossorigin="anonymous"></script>
         <script src="http://static.tumblr.com/evx2wil/hQyoa4yv3/plugins.js"></script>
-        <script src="http://static.tumblr.com/evx2wil/uHeoa4yss/ants.js"></script>
+        <script src="http://static.tumblr.com/evx2wil/rl2oacyy0/ants.js"></script>
 
         {block:IfSoundcloudURL} 
             <script src="https://connect.soundcloud.com/sdk/sdk-3.1.2.js"></script>
